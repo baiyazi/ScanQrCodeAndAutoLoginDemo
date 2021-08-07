@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="button">Scan qrCode</string>
+    <string name="confirm_login">确认登录后台吗？</string>
+    <string name="checkbutton">确认授权登录</string>
+    <string name="info">应用将访问您的个人信息</string>
+</resources>

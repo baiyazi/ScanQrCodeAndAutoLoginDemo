@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <center>
+        <div>login page!</div>
+        <img src="code.png" style="width=300px; height=300px;">
+        <div style="color:red;" id="info"></div>
+    </center>
+    <script>
+        var getting = {
+            url:'http://192.168.1.102:8080/checkscan',
+            data:{
+                "uuid": "Wxfsfdfskfj=="
+            },
+            dataType:'text',
+            success:function(res) {
+                if(JSON.parse(res)){
+                    $('#info').html("已授权");
+                    setTimeout(function(){
+                        window.location.href = 'http://192.168.1.102:8080/home';
+                    },1000);
+                }
+                else{
+                    $('#info').html("未授权");
+                }
+                setTimeout(function(){
+                    $.ajax(getting);
+                },1000);
+            },
+            error:function(res){
+                $('#info').html("请求发生了未知错误！");
+            }
+        };
+        $.ajax(getting)
+    </script>
+</body>
+</html>
